@@ -1,14 +1,17 @@
 const express = require('express');
-const Product = require('./models/product');
+const path = require('path');
+
+const productRoutes = require('./routes/product');
+const appRoutes = require('./routes/app');
 require('./db/mongoose');
 
 const app = express();
 
-app.get('/api/get_products', async (req, res) => {
-    const products = await Product.find({});
+const publicDir = path.join(__dirname, '../public');
+app.use(express.static(publicDir));
 
-    res.send(products);
-});
+app.use('/api/product', productRoutes);
+app.use('/api/app', appRoutes);
 
 const port = process.env.PORT || '5000';
 
