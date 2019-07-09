@@ -17,7 +17,7 @@ router.get('/get_config', async (req, res) => {
 
         res.send(appConfig);
     } catch (e) {
-        res.send(e);
+        res.send({ error: e });
     }
 });
 
