@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 
 const CitySchema = new mongoose.Schema(
     {
-        text: { type: 'String', required: true, trim: true, index: true },
+        name: { type: 'String', required: true, trim: true, index: true },
         ID: { type: 'Number', required: true, trim: true },
         countryID: { type: 'Number', ref: 'country' },
-        deliveryIDs: [{ type: 'Number', unique: true }]
+        deliveryIDs: [{ type: 'Number' }]
     },
     { toObject: { virtuals: true }, toJSON: { virtuals: true } }
 );
@@ -16,7 +16,7 @@ CitySchema.virtual('delivery', {
     foreignField: 'ID'
 });
 
-CitySchema.index({ text: 'text' });
+CitySchema.index({ name: 'text' });
 
 const City = mongoose.model('city', CitySchema);
 
