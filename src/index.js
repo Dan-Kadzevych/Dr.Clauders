@@ -80,16 +80,17 @@ app.use('/api/checkout', checkoutRoutes);
 
 // app.get('/delivery', async (req, res) => {
 //     try {
-//         const delivery = new Delivery({
-//             name: "Курьер Dr.Clauder's",
-//             ID: 2,
-//             descr:
-//                 'Доставка осуществляется с пн. по сб. с 09:00 до 19:00 бесплатно.'
-//         });
+//         await Delivery.updateOne(
+//             { ID: 1 },
+//             { deliveryPrice: { price: 25, description: '25 грн' } }
+//         );
 //
-//         await delivery.save();
+//         await Delivery.updateOne(
+//             { ID: 2 },
+//             { deliveryPrice: { price: 0, description: 'бесплатно' } }
+//         );
 //
-//         res.send(delivery);
+//         res.send(Delivery.find({}));
 //     } catch (e) {
 //         console.log(e);
 //     }
