@@ -1,19 +1,26 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const path = require('path');
 require('./db/mongoose');
 
 const productRoutes = require('./routes/product');
 const appRoutes = require('./routes/app');
 const checkoutRoutes = require('./routes/checkout');
+const userRoutes = require('./routes/user');
+const authRoutes = require('./routes/auth');
 
 const app = express();
 
 const publicDir = path.join(__dirname, '../public');
+
 app.use(express.static(publicDir));
+app.use(bodyParser.json());
 
 app.use('/api/product', productRoutes);
 app.use('/api/app', appRoutes);
 app.use('/api/checkout', checkoutRoutes);
+app.use('/api/user', userRoutes);
+app.use('/api/auth', authRoutes);
 
 // app.get('/setup', async (req, res) => {
 //     try {
