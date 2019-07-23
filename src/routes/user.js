@@ -38,7 +38,7 @@ router.post('/', async (req, res) => {
 });
 
 router.get('/me', auth, async (req, res) => {
-    res.send('me');
+    res.send(req.user);
 });
 
 module.exports = router;
