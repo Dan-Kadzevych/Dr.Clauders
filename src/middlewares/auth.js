@@ -8,7 +8,6 @@ const auth = async (req, res, next) => {
         const token = req.header('Authorization').replace('Bearer ', '');
         const decoded = jwt.verify(token, 'secret');
         const hashedToken = hashToken(token);
-
         const user = await User.findById(decoded.id);
 
         if (!user) {
@@ -20,6 +19,7 @@ const auth = async (req, res, next) => {
         user.checkToken(hashedToken);
 
         req.user = user;
+        req.token = hashedToken;
         return next();
     } catch (e) {
         return res.status(400).send({ error: 'Please Authenticate' });
