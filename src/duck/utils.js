@@ -6,4 +6,10 @@ const hashToken = token =>
         .update(token)
         .digest('base64');
 
-module.exports = { hashToken };
+const withJoiMessage = message => errors =>
+    errors.map(error => ({
+        ...error,
+        message
+    }));
+
+module.exports = { hashToken, withJoiMessage };

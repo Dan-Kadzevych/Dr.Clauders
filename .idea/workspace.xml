@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b53f483c-7e2b-4549-b195-c5016823d4c9" name="Default Changelist" comment="- Setup basic test environment with mocha&#10;- Started to implement product schema&#10;- Connected database&#10;- Added get_products route">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middlewares/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/duck/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/duck/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/user/findByCredentials.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/user/findByCredentials.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/user/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/user/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/user/validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/user/validate.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/user.js" afterDir="false" />
     </list>
@@ -68,61 +71,52 @@
     <session id="-1960105097">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="12" />
+          <entry key="project.closed" value="13" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="3" />
-          <entry key="project.open.time.4" value="3" />
+          <entry key="project.open.time.4" value="4" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.7" value="2" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="13" />
+          <entry key="project.opened" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="ESLintLanguageService" value="13" />
+          <entry key="ESLintLanguageService" value="14" />
           <entry key="PrettierLanguageServiceImpl" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="9894" />
+          <entry key="js" value="10834" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="9894" />
+          <entry key="JavaScript" value="10834" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="js" value="81" />
+          <entry key="js" value="89" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JavaScript" value="81" />
+          <entry key="JavaScript" value="89" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/routes/auth.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/middlewares/auth.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+            <state relative-caret-position="352">
+              <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -130,35 +124,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/models/user/user.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="36" column="46" selection-start-line="36" selection-start-column="46" selection-end-line="36" selection-end-column="46" />
+            <state relative-caret-position="273">
+              <caret line="38" column="48" lean-forward="true" selection-start-line="38" selection-start-column="48" selection-end-line="38" selection-end-column="48" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/routes/user.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-88">
-              <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/models/user/findByCredentials.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/middlewares/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="27" selection-start-column="27" selection-end-column="27" />
+            <state relative-caret-position="409">
+              <caret line="26" column="54" selection-start-line="26" selection-start-column="54" selection-end-line="26" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -171,6 +147,7 @@
       <find>Any</find>
       <find>this</find>
       <find>axios</find>
+      <find>validate</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -185,8 +162,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/test/models/product_test.js" />
-        <option value="$PROJECT_DIR$/test/model/product_test.js" />
         <option value="$PROJECT_DIR$/test/product_test.js" />
         <option value="$PROJECT_DIR$/test/test_helper.js" />
         <option value="$PROJECT_DIR$/.eslintrc.json" />
@@ -224,18 +199,20 @@
         <option value="$PROJECT_DIR$/src/middlewares/index.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/models/user/index.js" />
-        <option value="$PROJECT_DIR$/src/models/user/validate.js" />
         <option value="$PROJECT_DIR$/src/models/user/findByToken.js" />
         <option value="$PROJECT_DIR$/src/models/user/token.js" />
-        <option value="$PROJECT_DIR$/src/duck/utils.js" />
         <option value="$PROJECT_DIR$/src/models/user/middlewares.js" />
         <option value="$PROJECT_DIR$/src/duck/constants.js" />
-        <option value="$PROJECT_DIR$/src/models/user/findByCredentials.js" />
         <option value="$PROJECT_DIR$/src/models/user/methods.js" />
-        <option value="$PROJECT_DIR$/src/models/user/user.js" />
-        <option value="$PROJECT_DIR$/src/routes/user.js" />
         <option value="$PROJECT_DIR$/src/middlewares/auth.js" />
+        <option value="$PROJECT_DIR$/src/duck/utils.js" />
+        <option value="$PROJECT_DIR$/src/models/user/validate.js" />
+        <option value="$PROJECT_DIR$/src/models/user/validateCreate.js" />
+        <option value="$PROJECT_DIR$/src/models/user/validateCredentials.js" />
+        <option value="$PROJECT_DIR$/src/models/user/user.js" />
+        <option value="$PROJECT_DIR$/src/models/user/findByCredentials.js" />
         <option value="$PROJECT_DIR$/src/routes/auth.js" />
+        <option value="$PROJECT_DIR$/src/routes/user.js" />
       </list>
     </option>
   </component>
@@ -254,8 +231,9 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="900" />
+    <option name="height" value="800" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -315,14 +293,13 @@
               <item name="server" type="b2602c69:ProjectViewProjectNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
+              <item name="middlewares" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="server" type="b2602c69:ProjectViewProjectNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="models" type="462c0819:PsiDirectoryNode" />
-              <item name="category" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="server" type="b2602c69:ProjectViewProjectNode" />
@@ -457,7 +434,8 @@
       <workItem from="1563820257530" duration="125000" />
       <workItem from="1563877377712" duration="7354000" />
       <workItem from="1563885221780" duration="6025000" />
-      <workItem from="1563961056725" duration="4882000" />
+      <workItem from="1563961056725" duration="4941000" />
+      <workItem from="1564050276171" duration="5436000" />
     </task>
     <task id="LOCAL-00001" summary="- Setup basic test environment with mocha&#10;- Started to implement product schema&#10;- Connected database&#10;- Added get_products route">
       <created>1561397654423</created>
@@ -475,13 +453,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="176340000" />
+    <option name="totallyTimeSpent" value="181835000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -493,7 +471,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32923833" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.3083538" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.3083538" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32923833" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -535,11 +513,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="- Setup basic test environment with mocha&#10;- Started to implement product schema&#10;- Connected database&#10;- Added get_products route" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../../node.js/node-course/task-manager/src/models/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2149" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/product_test.js" />
     <entry file="file://$PROJECT_DIR$/../../../node.js/node-course/task-manager/src/db/mongoose.js">
       <provider selected="true" editor-type-id="text-editor" />
@@ -711,13 +684,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/models/user/findByToken.js" />
-    <entry file="file://$PROJECT_DIR$/src/models/user/validate.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-94">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/delivery/delivery.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
@@ -754,13 +720,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/models/user/token.js" />
-    <entry file="file://$PROJECT_DIR$/src/duck/utils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/user/middlewares.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -772,16 +731,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-252">
           <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
-          <folding>
-            <marker date="1563809254373" expanded="true" signature="2191:2467" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/user/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="25" selection-start-column="25" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -801,15 +750,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/middlewares/auth.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
+        <state relative-caret-position="460">
           <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/user/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="36" column="46" selection-start-line="36" selection-start-column="46" selection-end-line="36" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -817,6 +759,48 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="27" selection-start-column="27" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/user/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="25" lean-forward="true" selection-start-column="25" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/duck/utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" column="44" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/user/validate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/user/validateCredentials.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/user/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="38" column="48" lean-forward="true" selection-start-line="38" selection-start-column="48" selection-end-line="38" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -829,15 +813,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/routes/user.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-88">
-          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/auth.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        <state relative-caret-position="409">
+          <caret line="26" column="54" selection-start-line="26" selection-start-column="54" selection-end-line="26" selection-end-column="54" />
         </state>
       </provider>
     </entry>

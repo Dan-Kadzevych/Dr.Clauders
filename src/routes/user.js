@@ -14,17 +14,25 @@ router.post('/', async (req, res) => {
             return res.status(500).send({ error: error.details[0].message });
         }
 
-        let user = await User.findOne({ email: req.body.email });
+        const { name, email, phone, password } = req.body;
 
-        if (user) {
-            return res.status(400).send({ error: 'User already registered' });
+        if (await User.findOne({ email })) {
+            return res.status(400).send({
+                error: `User with email **${email}** is already registered`
+            });
         }
 
-        user = new User({
-            name: req.body.name,
-            email: req.body.email,
-            phone: req.body.phone,
-            password: req.body.password
+        if (await User.findOne({ phone })) {
+            return res.status(400).send({
+                error: `This phone number **${phone}** already in use`
+            });
+        }
+
+        const user = new User({
+            name,
+            email,
+            phone,
+            password
         });
 
         await user.save();

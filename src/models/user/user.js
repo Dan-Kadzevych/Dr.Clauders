@@ -10,6 +10,7 @@ const {
     getPublicProfile
 } = require('./methods');
 const findByCredentials = require('./findByCredentials');
+const validateCredentials = require('./validateCredentials');
 const validate = require('./validate');
 
 const TokenSchema = new mongoose.Schema({
@@ -22,7 +23,7 @@ const TokenSchema = new mongoose.Schema({
 
 const UserSchema = new mongoose.Schema({
     name: { type: 'String', required: true },
-    email: { type: 'String', unique: true, required: true },
+    email: { type: 'String', unique: true, lowercase: true, required: true },
     phone: { type: 'String', unique: true, required: true },
     password: { type: 'String', required: true },
     tokens: [TokenSchema]
@@ -34,6 +35,7 @@ UserSchema.methods.normalizeTokens = normalizeTokens;
 UserSchema.methods.checkToken = checkToken;
 UserSchema.methods.toJSON = getPublicProfile;
 UserSchema.statics.validate = validate;
+UserSchema.statics.validateCredentials = validateCredentials;
 UserSchema.statics.findByCredentials = findByCredentials;
 
 const User = mongoose.model('user', UserSchema);
