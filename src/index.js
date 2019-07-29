@@ -8,6 +8,7 @@ const appRoutes = require('./routes/app');
 const checkoutRoutes = require('./routes/checkout');
 const userRoutes = require('./routes/user');
 const authRoutes = require('./routes/auth');
+const cartRoutes = require('./routes/cart');
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.use('/api/app', appRoutes);
 app.use('/api/checkout', checkoutRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/cart', cartRoutes);
 
 // app.get('/setup', async (req, res) => {
 //     try {

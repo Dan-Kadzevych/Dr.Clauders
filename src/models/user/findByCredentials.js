@@ -1,6 +1,6 @@
 const bcrypt = require('bcrypt');
 
-async function findByCredentials(email, password) {
+async function findByCredentials({ email, password }) {
     const user = await this.findOne({ email });
 
     if (!user) {

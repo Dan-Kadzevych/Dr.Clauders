@@ -15,7 +15,7 @@ const validate = user =>
                 .required()
                 .error(withJoiMessage('Invalid email address')),
             phone: Joi.string()
-                .regex(/^\+?3?8?(0[5-9][0-9]\d{7})$/)
+                .regex(/^(\+?38|8)?0\d{9}$/)
                 .required()
                 .error(withJoiMessage('Invalid phone number')),
             password: Joi.string()

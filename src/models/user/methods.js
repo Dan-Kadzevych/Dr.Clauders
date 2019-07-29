@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 const jwt = require('jsonwebtoken');
 const moment = require('moment');
 const omit = require('lodash/omit');
@@ -40,7 +41,7 @@ function getPublicProfile() {
     const user = this;
     const userObject = user.toObject();
 
-    return omit(userObject, ['password', 'tokens']);
+    return omit(userObject, ['password', 'tokens', 'cart']);
 }
 
 function checkToken(hashedToken) {
@@ -52,9 +53,23 @@ function checkToken(hashedToken) {
     }
 }
 
+function getCart() {
+    const { cart } = this.toObject();
+
+    return {
+        ...cart,
+        quantityByID: cart.quantityByID.reduce((acc, value) => {
+            acc[value.productID] = value.quantity;
+            return acc;
+        }, {})
+    };
+}
+// const normalizeCart = cart => ();
+
 module.exports = {
     generateAuthToken,
     normalizeTokens,
     checkToken,
-    getPublicProfile
+    getPublicProfile,
+    getCart
 };

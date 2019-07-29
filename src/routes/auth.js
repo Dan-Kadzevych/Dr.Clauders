@@ -7,24 +7,26 @@ const router = new express.Router();
 
 router.post('/login', async (req, res) => {
     try {
-        const { error } = User.validateCredentials(req.body);
+        const { error } = User.validateCredentials(req.body.credentials);
 
         if (error) {
             return res.status(500).send({ error: error.details[0].message });
         }
 
-        const user = await User.findByCredentials(
-            req.body.email,
-            req.body.password
-        );
+        const user = await User.findByCredentials(req.body.credentials);
 
         if (!user) {
             return res.status(400).send({ error: 'Unable to login' });
         }
 
-        const token = await user.generateAuthToken();
+        user.cart = User.formatCartToSave(req.body.cart);
 
-        return res.send({ user, token });
+        await user.save();
+
+        const token = await user.generateAuthToken();
+        const cart = user.getCart();
+
+        return res.send({ user, token, cart });
     } catch (e) {
         return res.status(500).send({ error: 'Something went wrong' });
     }

@@ -18,7 +18,7 @@ const ProductSchema = new mongoose.Schema({
     media: {
         url: 'String'
     },
-    categoryIDs: [{ type: 'ObjectId', ref: 'categories', required: true }],
+    categoryIDs: [{ type: 'ObjectId', ref: 'category', required: true }],
     slug: { type: 'String', unique: true, required: true, trim: true }
 });
 

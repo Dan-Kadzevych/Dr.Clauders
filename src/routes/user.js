@@ -8,13 +8,13 @@ const router = new express.Router();
 
 router.post('/', async (req, res) => {
     try {
-        const { error } = User.validate(req.body);
+        const { error } = User.validate(req.body.user);
 
         if (error) {
             return res.status(500).send({ error: error.details[0].message });
         }
 
-        const { name, email, phone, password } = req.body;
+        const { name, email, phone, password } = req.body.user;
 
         if (await User.findOne({ email })) {
             return res.status(400).send({
@@ -28,25 +28,53 @@ router.post('/', async (req, res) => {
             });
         }
 
+        const cartToSave = User.formatCartToSave(req.body.cart);
+
         const user = new User({
             name,
             email,
             phone,
-            password
+            password,
+            cart: cartToSave
         });
 
         await user.save();
 
         const token = await user.generateAuthToken();
+        const cart = user.getCart();
 
-        return res.send({ user, token });
+        return res.send({ user, token, cart });
+    } catch (e) {
+        return res.status(500).send({ error: e.message });
+    }
+});
+
+router.post('/sync_cart', auth, async (req, res) => {
+    try {
+        const {
+            user,
+            body: { cart }
+        } = req;
+
+        user.cart = User.formatCartToSave(cart);
+
+        await user.save();
+
+        return res.send({ message: 'Cart successfully synced' });
     } catch (e) {
         return res.status(500).send({ error: e.message });
     }
 });
 
 router.get('/me', auth, async (req, res) => {
-    res.send({ user: req.user });
+    try {
+        const { user } = req;
+        const cart = user.getCart();
+
+        return res.send({ user, cart });
+    } catch (e) {
+        return res.status(500).send({ error: e.message });
+    }
 });
 
 module.exports = router;

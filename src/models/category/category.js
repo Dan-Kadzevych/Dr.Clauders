@@ -4,11 +4,11 @@ const { preSave } = require('./middlewares');
 const CategorySchema = new mongoose.Schema({
     name: { type: 'String', required: true, trim: true },
     slug: { type: 'String', required: true, trim: true, unique: true },
-    subCategories: [{ type: 'ObjectId', ref: 'categories' }],
+    subCategories: [{ type: 'ObjectId', ref: 'category' }],
     parent: {
         type: 'ObjectId',
         default: null,
-        ref: 'categories'
+        ref: 'category'
     },
     pet: {
         type: 'String',
@@ -26,6 +26,6 @@ const CategorySchema = new mongoose.Schema({
 
 CategorySchema.pre('save', preSave);
 
-const Category = mongoose.model('categories', CategorySchema);
+const Category = mongoose.model('category', CategorySchema);
 
 module.exports = Category;
