@@ -7,12 +7,10 @@ const {
     generateAuthToken,
     normalizeTokens,
     checkToken,
-    getPublicProfile,
-    getCart
+    getPublicProfile
 } = require('./methods');
 const findByCredentials = require('./findByCredentials');
 const validateCredentials = require('./validateCredentials');
-const formatCartToSave = require('./formatCartToSave');
 const validate = require('./validate');
 
 const TokenSchema = new mongoose.Schema({
@@ -23,9 +21,27 @@ const TokenSchema = new mongoose.Schema({
     }
 });
 
-const CartSchema = new mongoose.Schema({
-    productIDs: [{ type: 'ObjectId', ref: 'product' }],
-    quantityByID: [{ productID: 'String', quantity: 'Number' }]
+const CartSchema = new mongoose.Schema(
+    {
+        quantityByID: { type: 'Object', default: {} },
+        productIDs: [{ type: 'String' }]
+    },
+    {
+        minimize: false,
+        toObject: {
+            virtuals: true
+        },
+        toJSON: {
+            virtuals: true
+        }
+    }
+);
+
+CartSchema.virtual('products', {
+    localField: 'productIDs',
+    foreignField: '_id',
+    ref: 'product',
+    default: []
 });
 
 const UserSchema = new mongoose.Schema({
@@ -42,11 +58,9 @@ UserSchema.methods.generateAuthToken = generateAuthToken;
 UserSchema.methods.normalizeTokens = normalizeTokens;
 UserSchema.methods.checkToken = checkToken;
 UserSchema.methods.toJSON = getPublicProfile;
-UserSchema.methods.getCart = getCart;
 UserSchema.statics.validate = validate;
 UserSchema.statics.validateCredentials = validateCredentials;
 UserSchema.statics.findByCredentials = findByCredentials;
-UserSchema.statics.formatCartToSave = formatCartToSave;
 
 const User = mongoose.model('user', UserSchema);
 

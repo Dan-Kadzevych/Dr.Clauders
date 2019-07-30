@@ -11,7 +11,7 @@ const auth = async (req, res, next) => {
         const user = await User.findById(decoded.id);
 
         if (!user) {
-            throw new Error();
+            return res.status(400).send({ error: 'Please Authenticate' });
         }
 
         await user.normalizeTokens();
@@ -22,7 +22,7 @@ const auth = async (req, res, next) => {
         req.token = hashedToken;
         return next();
     } catch (e) {
-        return res.status(400).send({ error: 'Please Authenticate' });
+        return res.status(500).send({ error: e.message });
     }
 };
 

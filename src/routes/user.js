@@ -28,22 +28,19 @@ router.post('/', async (req, res) => {
             });
         }
 
-        const cartToSave = User.formatCartToSave(req.body.cart);
-
         const user = new User({
             name,
             email,
             phone,
             password,
-            cart: cartToSave
+            cart: req.body.cart
         });
 
         await user.save();
 
         const token = await user.generateAuthToken();
-        const cart = user.getCart();
 
-        return res.send({ user, token, cart });
+        return res.send({ user, token, cart: user.cart });
     } catch (e) {
         return res.status(500).send({ error: e.message });
     }
@@ -69,9 +66,10 @@ router.post('/sync_cart', auth, async (req, res) => {
 router.get('/me', auth, async (req, res) => {
     try {
         const { user } = req;
-        const cart = user.getCart();
 
-        return res.send({ user, cart });
+        // await user.populate('cart.products').execPopulate();
+
+        return res.send({ user, cart: user.cart });
     } catch (e) {
         return res.status(500).send({ error: e.message });
     }

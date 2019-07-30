@@ -34,7 +34,7 @@ router.get('/get_cart_products', async (req, res) => {
 
         res.send(products);
     } catch (e) {
-        res.send({ error: e });
+        res.status(500).send({ error: e.message });
     }
 });
 
