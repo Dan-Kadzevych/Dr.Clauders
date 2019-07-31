@@ -7,7 +7,9 @@ const {
     generateAuthToken,
     normalizeTokens,
     checkToken,
-    getPublicProfile
+    getPublicProfile,
+    addToCart,
+    populateCartProducts
 } = require('./methods');
 const findByCredentials = require('./findByCredentials');
 const validateCredentials = require('./validateCredentials');
@@ -58,6 +60,8 @@ UserSchema.methods.generateAuthToken = generateAuthToken;
 UserSchema.methods.normalizeTokens = normalizeTokens;
 UserSchema.methods.checkToken = checkToken;
 UserSchema.methods.toJSON = getPublicProfile;
+UserSchema.methods.addToCart = addToCart;
+UserSchema.methods.populateCartProducts = populateCartProducts;
 UserSchema.statics.validate = validate;
 UserSchema.statics.validateCredentials = validateCredentials;
 UserSchema.statics.findByCredentials = findByCredentials;

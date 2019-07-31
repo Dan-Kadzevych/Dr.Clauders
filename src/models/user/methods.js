@@ -53,9 +53,32 @@ function checkToken(hashedToken) {
     }
 }
 
+async function addToCart(productID, qty = 1) {
+    const { cart } = this;
+
+    if (!cart.productIDs.includes(productID)) {
+        cart.productIDs.push(productID);
+    }
+
+    cart.quantityByID[productID] =
+        (cart.quantityByID[productID] || 0) + Number(qty);
+
+    this.markModified('cart');
+
+    await this.save();
+}
+
+async function populateCartProducts() {
+    const user = this;
+
+    await user.populate('cart.products').execPopulate();
+}
+
 module.exports = {
     generateAuthToken,
     normalizeTokens,
     checkToken,
-    getPublicProfile
+    getPublicProfile,
+    addToCart,
+    populateCartProducts
 };
