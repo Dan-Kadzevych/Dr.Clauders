@@ -16,6 +16,7 @@ const {
 const findByCredentials = require('./findByCredentials');
 const validateCredentials = require('./validateCredentials');
 const validate = require('./validate');
+const validateCart = require('./validateCart');
 
 const TokenSchema = new mongoose.Schema({
     token: { type: 'String', required: true },
@@ -68,6 +69,7 @@ UserSchema.methods.checkToken = checkToken;
 UserSchema.methods.toJSON = getPublicProfile;
 UserSchema.methods.populateCartProducts = populateCartProducts;
 UserSchema.statics.validate = validate;
+UserSchema.statics.validateCart = validateCart;
 UserSchema.statics.validateCredentials = validateCredentials;
 UserSchema.statics.findByCredentials = findByCredentials;
 

@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b53f483c-7e2b-4549-b195-c5016823d4c9" name="Default Changelist" comment="- Setup basic test environment with mocha&#10;- Started to implement product schema&#10;- Connected database&#10;- Added get_products route">
+      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/duck/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/duck/constants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/user/methods.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/user/methods.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/user/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/user/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/user/validateCart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/user/validateCart.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/cart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/user.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -86,38 +84,38 @@
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
           <entry key="ESLintLanguageService" value="19" />
-          <entry key="PrettierLanguageServiceImpl" value="1" />
+          <entry key="PrettierLanguageServiceImpl" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="15075" />
+          <entry key="js" value="15632" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="15075" />
+          <entry key="JavaScript" value="15632" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="js" value="150" />
+          <entry key="js" value="153" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JavaScript" value="150" />
+          <entry key="JavaScript" value="153" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/routes/cart.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-509">
-              <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+            <state relative-caret-position="213">
+              <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
             </state>
           </provider>
         </entry>
@@ -125,7 +123,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/routes/auth.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
+            <state relative-caret-position="506">
               <caret line="22" column="26" lean-forward="true" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="26" />
             </state>
           </provider>
@@ -134,7 +132,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/models/user/methods.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1060">
+            <state relative-caret-position="996">
               <caret line="98" column="4" selection-start-line="98" selection-start-column="4" selection-end-line="98" selection-end-column="4" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
@@ -146,22 +144,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/models/user/user.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="51" column="35" lean-forward="true" selection-start-line="51" selection-start-column="35" selection-end-line="51" selection-end-column="35" />
+            <state relative-caret-position="767">
+              <caret line="52" column="35" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/models/user/validateCart.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/routes/user.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-192">
-              <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="64" selection-end-column="3" />
+            <state relative-caret-position="63">
+              <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -194,7 +187,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/db/mongoose.js" />
         <option value="$PROJECT_DIR$/src/duck/navConfig.js" />
         <option value="$PROJECT_DIR$/src/duck/navConfigStatic.js" />
         <option value="$PROJECT_DIR$/src/models/product.js" />
@@ -239,12 +231,13 @@
         <option value="$PROJECT_DIR$/src/routes/product.js" />
         <option value="$PROJECT_DIR$/src/models/product/product.js" />
         <option value="$PROJECT_DIR$/src/middlewares/auth.js" />
-        <option value="$PROJECT_DIR$/src/models/user/methods.js" />
-        <option value="$PROJECT_DIR$/src/models/user/user.js" />
         <option value="$PROJECT_DIR$/src/duck/constants.js" />
         <option value="$PROJECT_DIR$/src/routes/auth.js" />
         <option value="$PROJECT_DIR$/src/routes/user.js" />
+        <option value="$PROJECT_DIR$/src/models/user/methods.js" />
+        <option value="$PROJECT_DIR$/src/models/user/user.js" />
         <option value="$PROJECT_DIR$/src/routes/cart.js" />
+        <option value="$PROJECT_DIR$/src/models/user/validateCart.js" />
       </list>
     </option>
   </component>
@@ -353,6 +346,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="NewWatcherDialog.advanced.open" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.1.0" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -472,7 +466,7 @@
       <workItem from="1564396641416" duration="16387000" />
       <workItem from="1564485453096" duration="11865000" />
       <workItem from="1564570886879" duration="6636000" />
-      <workItem from="1564654892302" duration="6157000" />
+      <workItem from="1564654892302" duration="9150000" />
     </task>
     <task id="LOCAL-00001" summary="- Setup basic test environment with mocha&#10;- Started to implement product schema&#10;- Connected database&#10;- Added get_products route">
       <created>1561397654423</created>
@@ -490,10 +484,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="225842000" />
+    <option name="totallyTimeSpent" value="228835000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -709,13 +704,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/models/user/statics.js" />
-    <entry file="file://$PROJECT_DIR$/src/models/user/validate.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/user/findByCredentials.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
@@ -798,33 +786,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/user/validateCart.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/auth.js">
+    <entry file="file://$PROJECT_DIR$/src/models/user/validate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="22" column="26" lean-forward="true" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="26" />
+        <state relative-caret-position="152">
+          <caret line="19" column="63" lean-forward="true" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="63" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/routes/user.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-192">
-          <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="64" selection-end-column="3" />
+        <state relative-caret-position="216">
+          <caret line="13" column="73" lean-forward="true" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="22" column="26" lean-forward="true" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/models/user/user.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="51" column="35" lean-forward="true" selection-start-line="51" selection-start-column="35" selection-end-line="51" selection-end-column="35" />
+        <state relative-caret-position="767">
+          <caret line="52" column="35" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/models/user/methods.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1060">
+        <state relative-caret-position="996">
           <caret line="98" column="4" selection-start-line="98" selection-start-column="4" selection-end-line="98" selection-end-column="4" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
@@ -834,8 +826,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/routes/cart.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-509">
-          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+        <state relative-caret-position="213">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/user/validateCart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
         </state>
       </provider>
     </entry>
