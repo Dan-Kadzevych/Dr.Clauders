@@ -10,7 +10,7 @@ router.post('/login', async (req, res) => {
         const { error } = User.validateCredentials(req.body.credentials);
 
         if (error) {
-            return res.status(500).send({ error: error.details[0].message });
+            return res.status(400).send({ error: error.details[0].message });
         }
 
         const user = await User.findByCredentials(req.body.credentials);
@@ -19,14 +19,13 @@ router.post('/login', async (req, res) => {
             return res.status(400).send({ error: 'Unable to login' });
         }
 
-        user.cart = User.formatCartToSave(req.body.cart);
-
+        await user.cart.update(req.body.cart);
         await user.save();
+        await user.populateCartProducts();
 
         const token = await user.generateAuthToken();
-        const cart = user.getCart();
 
-        return res.send({ user, token, cart });
+        return res.send({ user, token, cart: user.cart });
     } catch (e) {
         return res.status(500).send({ error: 'Something went wrong' });
     }

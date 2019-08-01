@@ -2,6 +2,7 @@
 const jwt = require('jsonwebtoken');
 const moment = require('moment');
 const omit = require('lodash/omit');
+const difference = require('lodash/difference');
 
 const { hashToken } = require('../../duck/utils');
 const { tokenLifetimeSeconds } = require('../../duck/constants');
@@ -53,8 +54,8 @@ function checkToken(hashedToken) {
     }
 }
 
-async function addToCart(productID, qty = 1) {
-    const { cart } = this;
+function addToCart(productID, qty = 1) {
+    const cart = this;
 
     if (!cart.productIDs.includes(productID)) {
         cart.productIDs.push(productID);
@@ -63,9 +64,25 @@ async function addToCart(productID, qty = 1) {
     cart.quantityByID[productID] =
         (cart.quantityByID[productID] || 0) + Number(qty);
 
-    this.markModified('cart');
+    cart.markModified('quantityByID');
+}
 
-    await this.save();
+function removeFromCart(productIDs) {
+    const cart = this;
+
+    cart.productIDs = difference(cart.productIDs, productIDs);
+    cart.quantityByID = omit(cart.quantityByID, productIDs);
+
+    cart.markModified('quantityByID');
+}
+
+function updateCart({ productIDs, quantityByID }) {
+    const cart = this;
+
+    cart.productIDs = productIDs;
+    cart.quantityByID = quantityByID;
+
+    cart.markModified('quantityByID');
 }
 
 async function populateCartProducts() {
@@ -80,5 +97,7 @@ module.exports = {
     checkToken,
     getPublicProfile,
     addToCart,
+    removeFromCart,
+    updateCart,
     populateCartProducts
 };

@@ -37,6 +37,7 @@ router.post('/', async (req, res) => {
         });
 
         await user.save();
+        await user.populateCartProducts();
 
         const token = await user.generateAuthToken();
 
@@ -67,7 +68,7 @@ router.get('/me', auth, async (req, res) => {
     try {
         const { user } = req;
 
-        // await user.populate('cart.products').execPopulate();
+        await user.populateCartProducts();
 
         return res.send({ user, cart: user.cart });
     } catch (e) {

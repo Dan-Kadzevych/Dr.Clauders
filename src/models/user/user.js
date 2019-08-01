@@ -9,6 +9,8 @@ const {
     checkToken,
     getPublicProfile,
     addToCart,
+    removeFromCart,
+    updateCart,
     populateCartProducts
 } = require('./methods');
 const findByCredentials = require('./findByCredentials');
@@ -46,6 +48,10 @@ CartSchema.virtual('products', {
     default: []
 });
 
+CartSchema.methods.removeProducts = removeFromCart;
+CartSchema.methods.addProduct = addToCart;
+CartSchema.methods.update = updateCart;
+
 const UserSchema = new mongoose.Schema({
     name: { type: 'String', required: true },
     email: { type: 'String', unique: true, lowercase: true, required: true },
@@ -60,7 +66,6 @@ UserSchema.methods.generateAuthToken = generateAuthToken;
 UserSchema.methods.normalizeTokens = normalizeTokens;
 UserSchema.methods.checkToken = checkToken;
 UserSchema.methods.toJSON = getPublicProfile;
-UserSchema.methods.addToCart = addToCart;
 UserSchema.methods.populateCartProducts = populateCartProducts;
 UserSchema.statics.validate = validate;
 UserSchema.statics.validateCredentials = validateCredentials;
