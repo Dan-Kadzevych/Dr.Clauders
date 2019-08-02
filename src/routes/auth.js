@@ -19,8 +19,13 @@ router.post('/login', async (req, res) => {
             return res.status(400).send({ error: 'Unable to login' });
         }
 
-        await user.cart.update(req.body.cart);
-        await user.save();
+        const { error: cartError } = User.validateCart(req.body.cart);
+
+        if (!cartError) {
+            await user.cart.concat(req.body.cart);
+            await user.save();
+        }
+
         await user.populateCartProducts();
 
         const token = await user.generateAuthToken();

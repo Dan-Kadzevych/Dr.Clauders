@@ -1,6 +1,7 @@
 const express = require('express');
 
 const { auth } = require('../middlewares');
+const { emptyCart } = require('../duck/constants');
 
 const User = require('../models/user');
 
@@ -15,6 +16,7 @@ router.post('/', async (req, res) => {
         }
 
         const { name, email, phone, password } = req.body.user;
+        let { cart } = req.body;
 
         if (await User.findOne({ email })) {
             return res.status(400).send({
@@ -28,14 +30,21 @@ router.post('/', async (req, res) => {
             });
         }
 
+        const { error: cartError } = User.validateCart(cart);
+
+        if (cartError) {
+            cart = emptyCart;
+        }
+
         const user = new User({
             name,
             email,
             phone,
             password,
-            cart: req.body.cart
+            cart
         });
 
+        user.cart.normalize();
         await user.save();
         await user.populateCartProducts();
 

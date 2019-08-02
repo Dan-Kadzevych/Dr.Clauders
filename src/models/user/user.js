@@ -11,6 +11,8 @@ const {
     addToCart,
     removeFromCart,
     updateCart,
+    concatCart,
+    normalizeCart,
     populateCartProducts
 } = require('./methods');
 const findByCredentials = require('./findByCredentials');
@@ -52,6 +54,8 @@ CartSchema.virtual('products', {
 CartSchema.methods.removeProducts = removeFromCart;
 CartSchema.methods.addProduct = addToCart;
 CartSchema.methods.update = updateCart;
+CartSchema.methods.concat = concatCart;
+CartSchema.methods.normalize = normalizeCart;
 
 const UserSchema = new mongoose.Schema({
     name: { type: 'String', required: true },

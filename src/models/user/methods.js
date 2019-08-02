@@ -3,6 +3,9 @@ const jwt = require('jsonwebtoken');
 const moment = require('moment');
 const omit = require('lodash/omit');
 const difference = require('lodash/difference');
+const uniq = require('lodash/uniq');
+const compact = require('lodash/compact');
+const pick = require('lodash/pick');
 
 const { hashToken } = require('../../duck/utils');
 const { tokenLifetimeSeconds } = require('../../duck/constants');
@@ -64,6 +67,7 @@ function addToCart(productID, qty = 1) {
     cart.quantityByID[productID] =
         (cart.quantityByID[productID] || 0) + Number(qty);
 
+    cart.normalize();
     cart.markModified('quantityByID');
 }
 
@@ -73,6 +77,7 @@ function removeFromCart(productIDs) {
     cart.productIDs = difference(cart.productIDs, productIDs);
     cart.quantityByID = omit(cart.quantityByID, productIDs);
 
+    cart.normalize();
     cart.markModified('quantityByID');
 }
 
@@ -81,6 +86,26 @@ function updateCart({ productIDs, quantityByID }) {
 
     cart.productIDs = productIDs;
     cart.quantityByID = quantityByID;
+
+    cart.normalize();
+    cart.markModified('quantityByID');
+}
+
+function concatCart({ productIDs, quantityByID }) {
+    const cart = this;
+
+    cart.productIDs = [...cart.productIDs, ...productIDs];
+    cart.quantityByID = { ...cart.quantityByID, ...quantityByID };
+
+    cart.normalize();
+    cart.markModified('quantityByID');
+}
+
+function normalizeCart() {
+    const cart = this;
+
+    cart.productIDs = uniq(compact(cart.productIDs));
+    cart.quantityByID = pick(cart.quantityByID, cart.productIDs);
 
     cart.markModified('quantityByID');
 }
@@ -99,5 +124,7 @@ module.exports = {
     addToCart,
     removeFromCart,
     updateCart,
+    concatCart,
+    normalizeCart,
     populateCartProducts
 };
