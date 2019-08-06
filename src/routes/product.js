@@ -15,9 +15,9 @@ router.get('/get_products', async (req, res) => {
             'title media price slug'
         );
 
-        res.send(products);
+        return res.send(products);
     } catch (e) {
-        res.send({ error: e });
+        return res.send({ error: e });
     }
 });
 

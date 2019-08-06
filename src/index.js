@@ -9,6 +9,7 @@ const checkoutRoutes = require('./routes/checkout');
 const userRoutes = require('./routes/user');
 const authRoutes = require('./routes/auth');
 const cartRoutes = require('./routes/cart');
+const adminRoutes = require('./routes/admin');
 
 const app = express();
 
@@ -23,6 +24,11 @@ app.use('/api/checkout', checkoutRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/cart', cartRoutes);
+app.use('/api/admin', adminRoutes);
+
+app.use((err, req, res) => {
+    return res.status(500).send('Something broke!');
+});
 
 // app.get('/setup', async (req, res) => {
 //     try {

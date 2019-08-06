@@ -4,18 +4,35 @@ async function preSave(next) {
     try {
         if (this.parent) {
             const parent = await mongoose
-                .model('categories')
+                .model('category')
                 .findById(this.parent);
+
+            if (!parent) {
+                throw new Error('Parent not found');
+            }
+
             parent.subCategories.push(this);
             await parent.save();
 
             this.pet = parent.pet;
-
-            next();
         }
+
+        next();
     } catch (e) {
         next(e);
     }
 }
 
-module.exports = { preSave };
+async function preRemove(next) {
+    try {
+        await mongoose
+            .model('category')
+            .deleteMany({ _id: { $in: this.subCategories } });
+
+        next();
+    } catch (e) {
+        next(e);
+    }
+}
+
+module.exports = { preSave, preRemove };

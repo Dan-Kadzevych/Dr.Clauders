@@ -1,30 +1,44 @@
 const mongoose = require('mongoose');
-const { preSave } = require('./middlewares');
 
-const CategorySchema = new mongoose.Schema({
-    name: { type: 'String', required: true, trim: true },
-    slug: { type: 'String', required: true, trim: true, unique: true },
-    subCategories: [{ type: 'ObjectId', ref: 'category' }],
-    parent: {
-        type: 'ObjectId',
-        default: null,
-        ref: 'category'
-    },
-    pet: {
-        type: 'String',
-        required() {
-            return !this.parent;
+const { preSave, preRemove } = require('./middlewares');
+const { update } = require('./methods');
+
+const CategorySchema = new mongoose.Schema(
+    {
+        name: {
+            type: 'String',
+            required: true,
+            trim: true
         },
-        trim: true
+        slug: { type: 'String', required: true, trim: true, unique: true },
+        subCategories: [{ type: 'ObjectId', ref: 'category' }],
+        pet: {
+            type: 'String',
+            required: true,
+            trim: true,
+            enum: ['Cat', 'Dog']
+        },
+        media: {
+            background: {
+                type: 'String',
+                required() {
+                    return !this.parent;
+                }
+            },
+            icon: { type: 'String' }
+        },
+        parent: {
+            type: 'ObjectId',
+            default: null,
+            ref: 'category'
+        }
     },
-    pos: { type: 'Number', default: 0 },
-    media: {
-        background: { type: 'String', required: () => !this.parent },
-        icon: { type: 'String', required: () => this.parent }
-    }
-});
+    { minimize: false }
+);
 
 CategorySchema.pre('save', preSave);
+CategorySchema.pre('remove', preRemove);
+CategorySchema.methods.update = update;
 
 const Category = mongoose.model('category', CategorySchema);
 

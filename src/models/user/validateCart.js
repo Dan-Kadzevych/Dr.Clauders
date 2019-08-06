@@ -14,10 +14,12 @@ const validateQuantityByID = Joi.object()
 const validateCart = cart =>
     Joi.validate(
         cart,
-        {
+        Joi.object({
             productIDs: validateProductIDs,
             quantityByID: validateQuantityByID
-        },
+        })
+            .required()
+            .error(withJoiMessage('Cart is required')),
         { allowUnknown: true }
     );
 

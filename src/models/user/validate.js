@@ -4,7 +4,7 @@ const { withJoiMessage } = require('../../duck/utils');
 const validate = user =>
     Joi.validate(
         user,
-        {
+        Joi.object({
             name: Joi.string()
                 .min(1)
                 .max(200)
@@ -27,7 +27,9 @@ const validate = user =>
                         'Пароль должен быть не менее 6 символов, содержать цифры и заглавные буквы'
                     )
                 )
-        },
+        })
+            .required()
+            .error(withJoiMessage('User Info should be provided with body')),
         { allowUnknown: true }
     );
 
