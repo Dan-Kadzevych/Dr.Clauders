@@ -6,12 +6,10 @@ const router = new express.Router();
 
 router.get('/get_config', async (req, res) => {
     try {
-        const categories = await Category.find({ parent: null }).populate(
-            'subCategories'
-        );
+        const categories = await Category.getFormatted();
 
         const appConfig = {
-            categories: [...categories]
+            categories
         };
 
         res.send(appConfig);

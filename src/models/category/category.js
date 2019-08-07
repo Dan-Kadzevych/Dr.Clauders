@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
+const get = require('lodash/get');
 
 const { preSave, preRemove } = require('./middlewares');
 const { update } = require('./methods');
+const getFormattedCategories = require('./getFormattedCategories');
 
 const CategorySchema = new mongoose.Schema(
     {
@@ -10,13 +12,18 @@ const CategorySchema = new mongoose.Schema(
             required: true,
             trim: true
         },
-        slug: { type: 'String', required: true, trim: true, unique: true },
+        slug: {
+            personal: {
+                type: 'String',
+                required: true,
+                trim: true
+            }
+        },
         subCategories: [{ type: 'ObjectId', ref: 'category' }],
         pet: {
             type: 'String',
             required: true,
-            trim: true,
-            enum: ['Cat', 'Dog']
+            trim: true
         },
         media: {
             background: {
@@ -33,12 +40,32 @@ const CategorySchema = new mongoose.Schema(
             ref: 'category'
         }
     },
-    { minimize: false }
+    {
+        toObject: {
+            virtuals: true
+        },
+        toJSON: {
+            virtuals: true
+        },
+        minimize: false
+    }
 );
+
+CategorySchema.index({ parent: 1, 'slug.personal': 1 }, { unique: true });
+CategorySchema.virtual('slug.full').get(function getFullSlug() {
+    const { parent, slug } = this;
+    const personalSlug = get(slug, 'personal');
+
+    return parent
+        ? get(parent, 'slug.full') + personalSlug
+        : `/pet-supplements${personalSlug}`;
+});
 
 CategorySchema.pre('save', preSave);
 CategorySchema.pre('remove', preRemove);
+
 CategorySchema.methods.update = update;
+CategorySchema.statics.getFormatted = getFormattedCategories;
 
 const Category = mongoose.model('category', CategorySchema);
 

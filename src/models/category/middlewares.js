@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 async function preSave(next) {
     try {
-        if (this.parent) {
+        if (this.parent && this.isModified('parent')) {
             const parent = await mongoose
                 .model('category')
                 .findById(this.parent);
