@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const get = require('lodash/get');
 
-const { preSave, preRemove } = require('./middlewares');
+const { preRemove } = require('./middlewares');
 const { update } = require('./methods');
 const getFormattedCategories = require('./getFormattedCategories');
 
@@ -19,7 +19,6 @@ const CategorySchema = new mongoose.Schema(
                 trim: true
             }
         },
-        subCategories: [{ type: 'ObjectId', ref: 'category' }],
         pet: {
             type: 'String',
             required: true,
@@ -61,7 +60,6 @@ CategorySchema.virtual('slug.full').get(function getFullSlug() {
         : `/pet-supplements${personalSlug}`;
 });
 
-CategorySchema.pre('save', preSave);
 CategorySchema.pre('remove', preRemove);
 
 CategorySchema.methods.update = update;

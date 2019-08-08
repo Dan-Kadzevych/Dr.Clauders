@@ -55,7 +55,7 @@ router.post('/category', auth, admin, async (req, res) => {
 
         if (await Category.findOne({ 'slug.personal': slug, parent })) {
             return res.status(400).send({
-                error: `Категория с таким slug **${slug}** уже существует`
+                error: `Категория с таким slug "**${slug}**" уже существует`
             });
         }
 
@@ -97,19 +97,34 @@ router.delete('/category/:id', auth, admin, async (req, res) => {
 
 router.patch('/category/:id', auth, admin, async (req, res) => {
     try {
+        const slug = get(req.body, 'slug');
+        const parent = get(req.body, 'parent');
+
         const category = await Category.findById(req.params.id);
 
         if (!category) {
             res.status(400).send('Category not found');
         }
 
+        if (
+            await Category.findOne({
+                'slug.personal': slug,
+                parent,
+                _id: { $ne: req.params.id }
+            })
+        ) {
+            return res.status(400).send({
+                error: `Категория с таким slug "**${slug}**" уже существует`
+            });
+        }
+
         await category.update(req.body);
 
         const categories = await Category.getFormatted();
 
-        res.send(categories);
+        return res.send(categories);
     } catch (e) {
-        res.status(500).send({ error: e.message });
+        return res.status(500).send({ error: e.message });
     }
 });
 

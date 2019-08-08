@@ -4,7 +4,11 @@ async function update(updates) {
     const category = this;
 
     each(updates, (val, key) => {
-        category[key] = val;
+        if (key === 'slug') {
+            category[key] = { personal: val };
+        } else {
+            category[key] = val;
+        }
     });
 
     await category.save();
