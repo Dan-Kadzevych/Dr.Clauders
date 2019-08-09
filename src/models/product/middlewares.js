@@ -1,17 +1,23 @@
 const mongoose = require('mongoose');
 const uniq = require('lodash/uniq');
+const compact = require('lodash/compact');
 
 async function preSave(next) {
     try {
-        const parent = await mongoose
-            .model('category')
-            .findOne({ subCategories: this.categoryIDs.reverse()[0] });
+        if (this.isModified('categoryIDs')) {
+            const categories = await mongoose
+                .model('category')
+                .find({ _id: { $in: this.categoryIDs } })
+                .lean();
 
-        if (parent && !this.categoryIDs.includes(parent.id)) {
-            this.categoryIDs.unshift(parent.id);
+            const parentCategories = categories.map(
+                category => category.parent
+            );
+
+            this.categoryIDs = uniq(
+                compact([...parentCategories, ...this.categoryIDs])
+            );
         }
-
-        this.categoryIDs = uniq(this.categoryIDs);
 
         next();
     } catch (e) {

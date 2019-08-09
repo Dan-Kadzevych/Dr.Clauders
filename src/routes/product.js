@@ -38,13 +38,17 @@ router.get('/get_cart_products', async (req, res) => {
     }
 });
 
-router.get('/get_product', async (req, res) => {
+router.get('/get_product/:slug', async (req, res) => {
     try {
-        const product = await Product.findOne(req.query);
+        const product = await Product.findOne({ slug: req.params.slug });
 
-        res.send(product);
+        if (!product) {
+            return res.status(400).send({ error: 'Product not found' });
+        }
+
+        return res.send(product);
     } catch (e) {
-        res.send({ error: e });
+        return res.status(500).send({ error: e.message });
     }
 });
 

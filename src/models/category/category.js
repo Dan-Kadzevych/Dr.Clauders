@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const mongooseLeanVirtuals = require('mongoose-lean-virtuals');
 const get = require('lodash/get');
 
 const { preRemove } = require('./middlewares');
@@ -13,11 +14,9 @@ const CategorySchema = new mongoose.Schema(
             trim: true
         },
         slug: {
-            personal: {
-                type: 'String',
-                required: true,
-                trim: true
-            }
+            type: 'String',
+            required: true,
+            trim: true
         },
         pet: {
             type: 'String',
@@ -50,20 +49,21 @@ const CategorySchema = new mongoose.Schema(
     }
 );
 
-CategorySchema.index({ parent: 1, 'slug.personal': 1 }, { unique: true });
-CategorySchema.virtual('slug.full').get(function getFullSlug() {
+CategorySchema.index({ parent: 1, slug: 1 }, { unique: true });
+CategorySchema.virtual('path').get(function getFullSlug() {
     const { parent, slug } = this;
-    const personalSlug = get(slug, 'personal');
 
     return parent
-        ? get(parent, 'slug.full') + personalSlug
-        : `/pet-supplements${personalSlug}`;
+        ? `${get(parent, 'path')}/${slug}`
+        : `/pet-supplements/${slug}`;
 });
 
 CategorySchema.pre('remove', preRemove);
 
 CategorySchema.methods.update = update;
 CategorySchema.statics.getFormatted = getFormattedCategories;
+
+CategorySchema.plugin(mongooseLeanVirtuals);
 
 const Category = mongoose.model('category', CategorySchema);
 

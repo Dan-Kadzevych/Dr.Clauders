@@ -7,7 +7,7 @@ const ProductSchema = new mongoose.Schema(
     {
         title: { type: 'String', required: true, trim: true },
         price: { type: 'Number', min: 0, required: true, trim: true },
-        amount: { type: 'Number', min: 0, default: 0 },
+        available: { type: 'Boolean', default: true },
         description: {
             main: { type: 'String', default: '', trim: true },
             media: [{ type: 'String' }],
@@ -24,8 +24,20 @@ const ProductSchema = new mongoose.Schema(
         categoryIDs: [{ type: 'ObjectId', ref: 'category', required: true }],
         slug: { type: 'String', unique: true, required: true, trim: true }
     },
-    { minimize: false }
+    {
+        minimize: false,
+        toObject: {
+            virtuals: true
+        },
+        toJSON: {
+            virtuals: true
+        }
+    }
 );
+
+ProductSchema.virtual('path').get(function getFullSlug() {
+    return `/products/${this.slug}`;
+});
 
 ProductSchema.pre('save', preSave);
 ProductSchema.methods.update = update;

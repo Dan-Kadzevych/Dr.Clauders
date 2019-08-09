@@ -16,9 +16,9 @@ router.post('/product', auth, admin, async (req, res) => {
 
         await product.save();
 
-        res.send(product);
+        return res.send(product);
     } catch (e) {
-        res.status(500).send({ error: e.message });
+        return res.status(500).send({ error: e.message });
     }
 });
 
@@ -53,7 +53,7 @@ router.post('/category', auth, admin, async (req, res) => {
         const slug = get(req.body, 'slug');
         const parent = get(req.body, 'parent');
 
-        if (await Category.findOne({ 'slug.personal': slug, parent })) {
+        if (await Category.findOne({ slug, parent })) {
             return res.status(400).send({
                 error: `Категория с таким slug "**${slug}**" уже существует`
             });
@@ -61,9 +61,6 @@ router.post('/category', auth, admin, async (req, res) => {
 
         const category = new Category({
             ...req.body,
-            slug: {
-                personal: slug
-            },
             media: !parent ? { background: 'dog-supplements-header.jpg' } : null
         });
 
@@ -108,7 +105,7 @@ router.patch('/category/:id', auth, admin, async (req, res) => {
 
         if (
             await Category.findOne({
-                'slug.personal': slug,
+                slug,
                 parent,
                 _id: { $ne: req.params.id }
             })
