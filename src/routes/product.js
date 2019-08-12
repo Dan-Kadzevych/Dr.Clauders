@@ -6,14 +6,28 @@ const router = new express.Router();
 
 router.get('/get_products', async (req, res) => {
     try {
-        const { categoryID } = req.query;
+        const products = await Product.find({});
 
+        return res.send(products);
+    } catch (e) {
+        return res.send({ error: e });
+    }
+});
+
+router.get('/get_products/:categoryID', async (req, res) => {
+    try {
         const products = await Product.find(
             {
-                categoryIDs: categoryID
+                categoryIDs: req.params.categoryID
             },
             'title media price slug'
         );
+
+        if (!products.length) {
+            return res
+                .status(400)
+                .send('There are no products for this category');
+        }
 
         return res.send(products);
     } catch (e) {

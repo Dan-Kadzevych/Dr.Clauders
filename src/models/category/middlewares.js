@@ -1,4 +1,25 @@
 const mongoose = require('mongoose');
+const get = require('lodash/get');
+
+async function preSave(next) {
+    try {
+        if (this.isModified('parent') && this.parent) {
+            const parentCategory = await mongoose
+                .model('category')
+                .findById(this.parent);
+
+            if (!parentCategory) {
+                throw new Error('Родительской категории не существует');
+            }
+
+            this.pet = get(parentCategory, 'pet');
+        }
+
+        next();
+    } catch (e) {
+        next(e);
+    }
+}
 
 async function preRemove(next) {
     try {
@@ -10,4 +31,4 @@ async function preRemove(next) {
     }
 }
 
-module.exports = { preRemove };
+module.exports = { preRemove, preSave };

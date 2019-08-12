@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const mongooseLeanVirtuals = require('mongoose-lean-virtuals');
 const get = require('lodash/get');
 
-const { preRemove } = require('./middlewares');
+const { preRemove, preSave } = require('./middlewares');
 const { update } = require('./methods');
 const getFormattedCategories = require('./getFormattedCategories');
 
@@ -20,8 +20,7 @@ const CategorySchema = new mongoose.Schema(
         },
         pet: {
             type: 'String',
-            required: true,
-            trim: true
+            required: true
         },
         media: {
             background: {
@@ -58,6 +57,7 @@ CategorySchema.virtual('path').get(function getFullSlug() {
         : `/pet-supplements/${slug}`;
 });
 
+CategorySchema.pre('save', preSave);
 CategorySchema.pre('remove', preRemove);
 
 CategorySchema.methods.update = update;

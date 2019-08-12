@@ -16,7 +16,9 @@ router.post('/product', auth, admin, async (req, res) => {
 
         await product.save();
 
-        return res.send(product);
+        const products = await Product.find({});
+
+        return res.send(products);
     } catch (e) {
         return res.status(500).send({ error: e.message });
     }
@@ -24,9 +26,11 @@ router.post('/product', auth, admin, async (req, res) => {
 
 router.delete('/product/:id', auth, admin, async (req, res) => {
     try {
-        const result = await Product.deleteOne({ _id: req.params.id });
+        await Product.deleteOne({ _id: req.params.id });
 
-        res.send(result);
+        const products = await Product.find({});
+
+        res.send(products);
     } catch (e) {
         res.status(500).send({ error: e.message });
     }
@@ -42,7 +46,9 @@ router.patch('/product/:id', auth, admin, async (req, res) => {
 
         await product.update(req.body);
 
-        res.send(product);
+        const products = await Product.find({});
+
+        res.send(products);
     } catch (e) {
         res.status(500).send({ error: e.message });
     }
@@ -52,6 +58,19 @@ router.post('/category', auth, admin, async (req, res) => {
     try {
         const slug = get(req.body, 'slug');
         const parent = get(req.body, 'parent');
+        let pet = get(req.body, 'pet');
+
+        if (parent) {
+            const parentCategory = await Category.findById(parent);
+
+            if (!parentCategory) {
+                return res.status(400).send({
+                    error: `Родительской категории не существует`
+                });
+            }
+
+            pet = get(parentCategory, 'pet');
+        }
 
         if (await Category.findOne({ slug, parent })) {
             return res.status(400).send({
@@ -61,6 +80,7 @@ router.post('/category', auth, admin, async (req, res) => {
 
         const category = new Category({
             ...req.body,
+            pet,
             media: !parent ? { background: 'dog-supplements-header.jpg' } : null
         });
 
@@ -100,7 +120,7 @@ router.patch('/category/:id', auth, admin, async (req, res) => {
         const category = await Category.findById(req.params.id);
 
         if (!category) {
-            res.status(400).send('Category not found');
+            res.status(400).send('Категории не существует');
         }
 
         if (
