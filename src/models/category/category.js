@@ -5,6 +5,7 @@ const get = require('lodash/get');
 const { preRemove, preSave } = require('./middlewares');
 const { update } = require('./methods');
 const getFormattedCategories = require('./getFormattedCategories');
+const validate = require('./validate');
 
 const CategorySchema = new mongoose.Schema(
     {
@@ -24,10 +25,7 @@ const CategorySchema = new mongoose.Schema(
         },
         media: {
             background: {
-                type: 'String',
-                required() {
-                    return !this.parent;
-                }
+                type: 'String'
             },
             icon: { type: 'String' }
         },
@@ -62,6 +60,7 @@ CategorySchema.pre('remove', preRemove);
 
 CategorySchema.methods.update = update;
 CategorySchema.statics.getFormatted = getFormattedCategories;
+CategorySchema.statics.validate = validate;
 
 CategorySchema.plugin(mongooseLeanVirtuals);
 

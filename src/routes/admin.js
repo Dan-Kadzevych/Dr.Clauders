@@ -9,6 +9,13 @@ const router = new express.Router();
 
 router.post('/product', auth, admin, async (req, res) => {
     try {
+        const slug = get(req.body, 'slug');
+
+        if (await Product.findOne({ slug })) {
+            return res.status(400).send({
+                error: `Продукт с таким slug "**${slug}**" уже существует`
+            });
+        }
         const product = new Product({
             ...req.body,
             media: { url: 'product-test.png' }
@@ -58,18 +65,11 @@ router.post('/category', auth, admin, async (req, res) => {
     try {
         const slug = get(req.body, 'slug');
         const parent = get(req.body, 'parent');
-        let pet = get(req.body, 'pet');
 
-        if (parent) {
-            const parentCategory = await Category.findById(parent);
+        const { error } = Category.validate(req.body);
 
-            if (!parentCategory) {
-                return res.status(400).send({
-                    error: `Родительской категории не существует`
-                });
-            }
-
-            pet = get(parentCategory, 'pet');
+        if (error) {
+            return res.status(400).send({ error: error.details[0].message });
         }
 
         if (await Category.findOne({ slug, parent })) {
@@ -79,9 +79,7 @@ router.post('/category', auth, admin, async (req, res) => {
         }
 
         const category = new Category({
-            ...req.body,
-            pet,
-            media: !parent ? { background: 'dog-supplements-header.jpg' } : null
+            ...req.body
         });
 
         await category.save();
@@ -116,6 +114,12 @@ router.patch('/category/:id', auth, admin, async (req, res) => {
     try {
         const slug = get(req.body, 'slug');
         const parent = get(req.body, 'parent');
+
+        const { error } = Category.validate(req.body);
+
+        if (error) {
+            return res.status(400).send({ error: error.details[0].message });
+        }
 
         const category = await Category.findById(req.params.id);
 

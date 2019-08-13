@@ -39,7 +39,7 @@ ProductSchema.virtual('path').get(function getFullSlug() {
     return `/products/${this.slug}`;
 });
 
-ProductSchema.pre('save', preSave);
+ProductSchema.pre('validate', preSave);
 ProductSchema.methods.update = update;
 
 const Product = mongoose.model('product', ProductSchema);
