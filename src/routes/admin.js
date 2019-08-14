@@ -45,19 +45,43 @@ router.delete('/product/:id', auth, admin, async (req, res) => {
 
 router.patch('/product/:id', auth, admin, async (req, res) => {
     try {
+        const slug = get(req.body, 'slug');
+        const title = get(req.body, 'title');
         const product = await Product.findById(req.params.id);
 
         if (!product) {
             res.status(400).send('Product not found');
         }
 
+        if (
+            await Product.findOne({
+                slug,
+                _id: { $ne: req.params.id }
+            })
+        ) {
+            return res.status(400).send({
+                error: `Продукт с таким slug "**${slug}**" уже существует`
+            });
+        }
+
+        if (
+            await Product.findOne({
+                title,
+                _id: { $ne: req.params.id }
+            })
+        ) {
+            return res.status(400).send({
+                error: `Продукт с таким именем "**${title}**" уже существует`
+            });
+        }
+
         await product.update(req.body);
 
         const products = await Product.find({});
 
-        res.send(products);
+        return res.send(products);
     } catch (e) {
-        res.status(500).send({ error: e.message });
+        return res.status(500).send({ error: e.message });
     }
 });
 

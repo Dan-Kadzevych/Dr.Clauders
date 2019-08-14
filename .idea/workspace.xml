@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b53f483c-7e2b-4549-b195-c5016823d4c9" name="Default Changelist" comment="- Setup basic test environment with mocha&#10;- Started to implement product schema&#10;- Connected database&#10;- Added get_products route">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/category/category.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/category/category.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/category/middlewares.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/category/middlewares.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/product/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/product/product.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/user.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -70,9 +67,9 @@
     <session id="-1960105097">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="27" />
+          <entry key="project.closed" value="28" />
           <entry key="project.open.time.0" value="5" />
-          <entry key="project.open.time.1" value="5" />
+          <entry key="project.open.time.1" value="6" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.4" value="6" />
           <entry key="project.open.time.5" value="3" />
@@ -80,33 +77,33 @@
           <entry key="project.open.time.7" value="3" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="28" />
+          <entry key="project.opened" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="ESLintLanguageService" value="28" />
+          <entry key="ESLintLanguageService" value="29" />
           <entry key="PrettierLanguageServiceImpl" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="23515" />
+          <entry key="js" value="23576" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="23515" />
+          <entry key="JavaScript" value="23576" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="js" value="266" />
+          <entry key="js" value="267" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JavaScript" value="266" />
+          <entry key="JavaScript" value="267" />
         </counts>
       </usages-collector>
     </session>
@@ -116,35 +113,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/routes/admin.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="116" lean-forward="true" selection-start-line="116" selection-end-line="116" />
+            <state relative-caret-position="375">
+              <caret line="70" column="14" lean-forward="true" selection-start-line="70" selection-start-column="14" selection-end-line="70" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/models/category/methods.js">
+        <entry file="file://$PROJECT_DIR$/src/models/product/product.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/routes/user.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/models/user/validate.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="512">
-              <caret line="31" column="44" selection-end-line="36" />
+            <state relative-caret-position="160">
+              <caret line="7" column="47" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -235,12 +214,12 @@
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/routes/product.js" />
         <option value="$PROJECT_DIR$/src/models/category/methods.js" />
-        <option value="$PROJECT_DIR$/src/models/product/product.js" />
         <option value="$PROJECT_DIR$/src/routes/user.js" />
-        <option value="$PROJECT_DIR$/src/routes/admin.js" />
         <option value="$PROJECT_DIR$/src/models/category/validate.js" />
         <option value="$PROJECT_DIR$/src/models/category/category.js" />
         <option value="$PROJECT_DIR$/src/models/category/middlewares.js" />
+        <option value="$PROJECT_DIR$/src/models/product/product.js" />
+        <option value="$PROJECT_DIR$/src/routes/admin.js" />
       </list>
     </option>
   </component>
@@ -502,7 +481,8 @@
       <workItem from="1565255995590" duration="7393000" />
       <workItem from="1565345883251" duration="12303000" />
       <workItem from="1565604658999" duration="7999000" />
-      <workItem from="1565694548716" duration="4943000" />
+      <workItem from="1565694548716" duration="4968000" />
+      <workItem from="1565775202733" duration="1358000" />
     </task>
     <task id="LOCAL-00001" summary="- Setup basic test environment with mocha&#10;- Started to implement product schema&#10;- Connected database&#10;- Added get_products route">
       <created>1561397654423</created>
@@ -520,7 +500,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="294560000" />
+    <option name="totallyTimeSpent" value="295943000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -802,13 +782,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/product/product.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="41" column="27" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/routes/product.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="310">
@@ -816,31 +789,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/user/validate.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="31" column="44" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/category/category.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/category/methods.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
@@ -858,10 +810,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/category/methods.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/user/validate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="713">
+          <caret line="31" column="44" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/product/product.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="7" column="47" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/routes/admin.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="116" lean-forward="true" selection-start-line="116" selection-end-line="116" />
+        <state relative-caret-position="375">
+          <caret line="70" column="14" lean-forward="true" selection-start-line="70" selection-start-column="14" selection-end-line="70" selection-end-column="14" />
         </state>
       </provider>
     </entry>

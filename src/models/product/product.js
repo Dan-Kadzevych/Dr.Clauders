@@ -5,7 +5,7 @@ const { update } = require('./methods');
 
 const ProductSchema = new mongoose.Schema(
     {
-        title: { type: 'String', required: true, trim: true },
+        title: { type: 'String', unique: true, required: true, trim: true },
         price: { type: 'Number', min: 0, required: true, trim: true },
         available: { type: 'Boolean', default: true },
         description: {
