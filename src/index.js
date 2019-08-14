@@ -9,7 +9,7 @@ const checkoutRoutes = require('./routes/checkout');
 const userRoutes = require('./routes/user');
 const authRoutes = require('./routes/auth');
 const cartRoutes = require('./routes/cart');
-const adminRoutes = require('./routes/admin');
+const adminRoutes = require('./routes/admin/admin');
 
 const app = express();
 

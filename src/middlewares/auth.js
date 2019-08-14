@@ -5,7 +5,13 @@ const { hashToken } = require('../duck/utils');
 
 const auth = async (req, res, next) => {
     try {
-        const token = req.header('Authorization').replace('Bearer ', '');
+        const authToken = req.header('Authorization');
+
+        if (!authToken) {
+            return res.status(400).send({ error: 'Please Authenticate' });
+        }
+
+        const token = authToken.replace('Bearer ', '');
         const decoded = jwt.verify(token, 'secret');
         const hashedToken = hashToken(token);
         const user = await User.findById(decoded.id);
