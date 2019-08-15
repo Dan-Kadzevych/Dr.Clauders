@@ -13,7 +13,7 @@ const { tokenLifetimeSeconds } = require('../../duck/constants');
 async function generateAuthToken() {
     const user = this;
 
-    const token = jwt.sign({ id: user.id }, 'secret', {
+    const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, {
         expiresIn: tokenLifetimeSeconds
     });
     const hashedToken = hashToken(token);

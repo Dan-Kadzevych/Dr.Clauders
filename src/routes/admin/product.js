@@ -48,7 +48,7 @@ router.patch('/:id', async (req, res) => {
         const product = await Product.findById(req.params.id);
 
         if (!product) {
-            res.status(400).send({ error: 'Product not found' });
+            return res.status(400).send({ error: 'Product not found' });
         }
 
         if (

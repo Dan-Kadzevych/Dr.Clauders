@@ -41,16 +41,16 @@ router.delete('/:id', async (req, res) => {
         const category = await Category.findById(req.params.id);
 
         if (!category) {
-            res.status(400).send('Category not found');
+            return res.status(400).send('Category not found');
         }
 
         await category.remove();
 
         const categories = await Category.getFormatted();
 
-        res.send(categories);
+        return res.send(categories);
     } catch (e) {
-        res.status(500).send({ error: e.message });
+        return res.status(500).send({ error: e.message });
     }
 });
 
@@ -68,7 +68,7 @@ router.patch('/:id', async (req, res) => {
         const category = await Category.findById(req.params.id);
 
         if (!category) {
-            res.status(400).send({ error: 'Категории не существует' });
+            return res.status(400).send({ error: 'Категории не существует' });
         }
 
         if (
