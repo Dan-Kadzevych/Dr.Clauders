@@ -3,7 +3,45 @@
   <component name="ChangeListManager">
     <list default="true" id="b53f483c-7e2b-4549-b195-c5016823d4c9" name="Default Changelist" comment="- Setup basic test environment with mocha&#10;- Started to implement product schema&#10;- Connected database&#10;- Added get_products route">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/asset-manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/precache-manifest.af6a696c2547b65666d3f5c4c7bb38f8.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/service-worker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/css/2.5e63658b.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/css/2.5e63658b.chunk.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/2.3f07f216.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/2.3f07f216.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/main.10ec8a41.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/main.10ec8a41.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/runtime~main.a8a9905a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/js/runtime~main.a8a9905a.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/404-image.cfdd838c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/back.f250e126.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/close-button.aeec2863.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/drop-down-arrow.bfc53b6a.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/gallery-1.c1be2ef1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/gallery-10.6f833fd4.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/gallery-11.024df8b3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/gallery-12.aeccaa9f.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/gallery-13.85f3950a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/gallery-14.e70c7075.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/gallery-2.a1749dd0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/gallery-3.83ce8d3e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/gallery-4.474f15ed.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/gallery-5.051ca274.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/gallery-6.d7f9995b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/gallery-7.d7178cf4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/gallery-8.30c83157.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/gallery-9.2f3350c5.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/logo.fb8e0a1e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/plus.ed718a5f.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/sprite.9cd39295.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/story-1.44015291.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/build/static/media/story-2.2d8097b7.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/product.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -89,7 +127,7 @@
         <counts>
           <entry key="env" value="65" />
           <entry key="gitignore" value="8" />
-          <entry key="js" value="23972" />
+          <entry key="js" value="23984" />
           <entry key="json" value="47" />
         </counts>
       </usages-collector>
@@ -97,7 +135,7 @@
         <counts>
           <entry key=".env file" value="65" />
           <entry key="JSON" value="47" />
-          <entry key="JavaScript" value="23972" />
+          <entry key="JavaScript" value="23984" />
           <entry key="PLAIN_TEXT" value="8" />
         </counts>
       </usages-collector>
@@ -105,14 +143,14 @@
         <counts>
           <entry key="env" value="1" />
           <entry key="gitignore" value="2" />
-          <entry key="js" value="281" />
+          <entry key="js" value="282" />
           <entry key="json" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JSON" value="4" />
-          <entry key="JavaScript" value="281" />
+          <entry key="JavaScript" value="282" />
           <entry key="PLAIN_TEXT" value="3" />
         </counts>
       </usages-collector>
@@ -133,21 +171,25 @@
         <entry file="file://$PROJECT_DIR$/src/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="375">
-              <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
+              <caret line="34" column="17" lean-forward="true" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/build/static/js/2.3f07f216.chunk.js">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/src/routes/product.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="183">
+              <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="161">
-              <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+              <caret line="7" column="33" lean-forward="true" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -242,14 +284,14 @@
         <option value="$PROJECT_DIR$/src/middlewares/auth.js" />
         <option value="$PROJECT_DIR$/src/routes/admin/admin.js" />
         <option value="$PROJECT_DIR$/src/routes/admin/product.js" />
-        <option value="$PROJECT_DIR$/src/routes/product.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/dev.env" />
         <option value="$PROJECT_DIR$/src/db/mongoose.js" />
         <option value="$PROJECT_DIR$/src/routes/admin/category.js" />
         <option value="$PROJECT_DIR$/config/dev.env" />
-        <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/routes/product.js" />
       </list>
     </option>
   </component>
@@ -316,11 +358,6 @@
             <path>
               <item name="server" type="b2602c69:ProjectViewProjectNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -381,18 +418,19 @@
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client" />
+      <recent name="$PROJECT_DIR$/src/models" />
+      <recent name="$PROJECT_DIR$/public/media" />
+      <recent name="$PROJECT_DIR$/images" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/config" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/routes/admin" />
       <recent name="$PROJECT_DIR$/src/models/product" />
       <recent name="$PROJECT_DIR$/src/models/category" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/models" />
-      <recent name="$PROJECT_DIR$/public/media" />
-      <recent name="$PROJECT_DIR$/images" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -498,7 +536,7 @@
       <workItem from="1565860672746" duration="1804000" />
       <workItem from="1565862860319" duration="3146000" />
       <workItem from="1565876172869" duration="1456000" />
-      <workItem from="1565946390135" duration="992000" />
+      <workItem from="1565946390135" duration="1260000" />
     </task>
     <task id="LOCAL-00001" summary="- Setup basic test environment with mocha&#10;- Started to implement product schema&#10;- Connected database&#10;- Added get_products route">
       <created>1561397654423</created>
@@ -516,10 +554,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="306512000" />
+    <option name="totallyTimeSpent" value="306780000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -781,13 +820,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes/product.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1311">
-          <caret line="57" selection-start-line="57" selection-end-line="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/product/product.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
@@ -836,6 +868,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/build/static/js/2.3f07f216.chunk.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="33" lean-forward="true" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config/dev.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
@@ -843,22 +885,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
-          <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
+          <caret line="34" column="17" lean-forward="true" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/build/static/js/2.3f07f216.chunk.js">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/src/routes/product.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
