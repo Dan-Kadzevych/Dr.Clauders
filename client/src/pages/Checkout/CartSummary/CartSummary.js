@@ -1,20 +1,7 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { submit } from 'redux-form';
 import styled from 'styled-components';
 
 import { Spinner } from 'blocks';
-import {
-    getIsFormValid,
-    getTotalPrice,
-    getDeliveryPriceDescription
-} from '../duck/selectros';
-import {
-    getCartProducts,
-    getQuantityByID,
-    getCartSummary,
-    getIsCartLoading
-} from 'pages/Cart/duck/selectors';
 import { Title } from './elements';
 import { Summary, Products } from './index';
 
@@ -29,22 +16,6 @@ const Cart = styled.div`
     padding-left: 2.5rem;
     border-left: 1px solid ${color_grey_light};
 `;
-
-const mapStateToProps = state => ({
-    isValid: getIsFormValid(state),
-    products: getCartProducts(state),
-    quantityByID: getQuantityByID(state),
-    cartSummary: getCartSummary(state),
-    totalPrice: getTotalPrice(state),
-    deliveryPrice: getDeliveryPriceDescription(state),
-    isCartLoading: getIsCartLoading(state)
-});
-
-const mapDispatchToProps = dispatch => ({
-    submitCheckout() {
-        return dispatch(submit('checkout'));
-    }
-});
 
 const CartSummary = ({
     isValid,
@@ -77,7 +48,4 @@ const CartSummary = ({
     </Cart>
 );
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(CartSummary);
+export default CartSummary;

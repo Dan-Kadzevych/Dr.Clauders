@@ -19,7 +19,7 @@ const Link = styled(A)`
 const EmptyCart = () => (
     <StyledEmptyCart>
         Your cart is currently empty.
-        <Link to="/pet-supplements/dog-supplements">
+        <Link to="/shop">
             <ButtonAlt>Return to shop</ButtonAlt>
         </Link>
     </StyledEmptyCart>

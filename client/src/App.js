@@ -64,6 +64,13 @@ class App extends Component {
                                 component={Products}
                             />
                             <Route
+                                path={'/shop'}
+                                exact
+                                component={() => (
+                                    <PageContainer>Shop</PageContainer>
+                                )}
+                            />
+                            <Route
                                 path="/products/:product"
                                 exact
                                 component={Product}
