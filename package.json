@@ -6,7 +6,8 @@
   "scripts": {
     "test": "nodemon --exec 'mocha -R min'",
     "start": "node src/index.js",
-    "dev": "nodemon -r dotenv/config src/index.js dotenv_config_path=config/dev.env"
+    "dev": "nodemon -r dotenv/config src/index.js dotenv_config_path=config/dev.env",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "author": "",
   "license": "ISC",
