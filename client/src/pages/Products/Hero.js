@@ -28,7 +28,7 @@ const StyledHero = styled.section`
                         rgba(${toRgba(color_primary)} 0.3),
                         rgba(${toRgba(color_primary)} 0.3)
                     ),
-                    url('https://dr-clauders-server.herokuapp.com/media/${background}')
+                    url('/media/${background}')
                         center/cover no-repeat;
                         height: 30rem;
                         

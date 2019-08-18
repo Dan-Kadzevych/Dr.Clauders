@@ -16,10 +16,7 @@ const Figure = styled.figure`
 const Media = ({ main }) => (
     <StyledMedia>
         <Figure>
-            <Image
-                src={`https://dr-clauders-server.herokuapp.com/media/${main}`}
-                alt=""
-            />
+            <Image src={`/media/${main}`} alt="" />
         </Figure>
     </StyledMedia>
 );

@@ -38,10 +38,7 @@ const ProductCart = ({
 }) => (
     <Card>
         <Card.Body to={path}>
-            <Card.Image
-                src={`https://dr-clauders-server.herokuapp.com/media/${image}`}
-                alt=""
-            />
+            <Card.Image src={`/media/${image}`} alt="" />
             <Card.Title>{title}</Card.Title>
             <Card.Price>{toUAH(price)}</Card.Price>
         </Card.Body>
