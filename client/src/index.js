@@ -16,9 +16,9 @@ export const history = createBrowserHistory();
 const store = createStore(
     createRootReducer(history),
     compose(
-        applyMiddleware(routerMiddleware(history), thunk),
-        window.__REDUX_DEVTOOLS_EXTENSION__ &&
-            window.__REDUX_DEVTOOLS_EXTENSION__()
+        applyMiddleware(routerMiddleware(history), thunk)
+        // window.__REDUX_DEVTOOLS_EXTENSION__ &&
+        //     window.__REDUX_DEVTOOLS_EXTENSION__()
     )
 );
 store.dispatch(getMyProfile());
