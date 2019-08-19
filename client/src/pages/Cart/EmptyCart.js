@@ -18,9 +18,9 @@ const Link = styled(A)`
 
 const EmptyCart = () => (
     <StyledEmptyCart>
-        Your cart is currently empty.
+        Ваша корзина пуста.
         <Link to="/shop">
-            <ButtonAlt>Return to shop</ButtonAlt>
+            <ButtonAlt>Вернуться в магазин</ButtonAlt>
         </Link>
     </StyledEmptyCart>
 );

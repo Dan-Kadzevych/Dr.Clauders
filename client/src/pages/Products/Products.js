@@ -49,6 +49,9 @@ const mapDispatchToProps = dispatch => ({
     getProductsByCategory(filter, categoryID) {
         return dispatch(operations.fetchProducts(filter, { categoryID }));
     },
+    getAllProducts(filter) {
+        return dispatch(operations.fetchProducts(filter));
+    },
     addToCart(ID) {
         return dispatch(addToCart(ID));
     }
@@ -56,10 +59,19 @@ const mapDispatchToProps = dispatch => ({
 
 class Products extends Component {
     componentDidMount() {
-        const { categoryID, location } = this.props;
+        const {
+            categoryID,
+            location,
+            getProductsByCategory,
+            getAllProducts
+        } = this.props;
 
         if (categoryID) {
-            this.props.getProductsByCategory(location, categoryID);
+            getProductsByCategory(location, categoryID);
+        }
+
+        if (location === '/shop') {
+            getAllProducts(location);
         }
     }
     componentDidUpdate({ location: prevLocation }) {
@@ -79,13 +91,16 @@ class Products extends Component {
             isProductAddedFunc,
             isProductRequestedFunc,
             isLoading,
-            categoryID
+            categoryID,
+            location
         } = this.props;
 
-        return categoryID ? (
+        return categoryID || location === '/shop' ? (
             <Container>
-                <Hero title={categoryName} media={categoryMedia} />
-                <Results>Showing all {products.length} results</Results>
+                {categoryName && (
+                    <Hero title={categoryName} media={categoryMedia} />
+                )}
+                <Results>Товаров: {products.length}</Results>
                 <ProductsGrid
                     isLoading={isLoading}
                     products={products}

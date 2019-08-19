@@ -30,7 +30,7 @@ const mapStateToProps = state => ({
 const Cart = ({ cartSummary, isUpdating, isLoading, isEmpty }) => (
     <StyledCart>
         <PageHeader>
-            <CartTitle>Cart</CartTitle>
+            <CartTitle>Корзина</CartTitle>
         </PageHeader>
         <CartForm
             isUpdating={isUpdating}

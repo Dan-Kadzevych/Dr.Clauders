@@ -57,6 +57,7 @@ class App extends Component {
                             <Route path="/auth" component={Auth} />
                             <Route
                                 path={[
+                                    '/shop',
                                     '/pet-supplements/:pet/:category',
                                     '/pet-supplements/:pet'
                                 ]}

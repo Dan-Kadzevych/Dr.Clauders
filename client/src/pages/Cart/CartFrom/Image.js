@@ -15,7 +15,7 @@ const StyledImage = styled.img`
 
 const Image = ({ path, url }) => (
     <ImageWrapper to={path}>
-        <StyledImage src={`/${url}`} alt="" />
+        <StyledImage src={`/media/${url}`} alt="" />
     </ImageWrapper>
 );
 
