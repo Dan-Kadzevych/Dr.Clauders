@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
+import breaks from 'remark-breaks';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 import {
@@ -92,6 +93,11 @@ const CTabPanel = styled(TabPanel)`
             margin-bottom: 1.5rem;
         }
     }
+    ul {
+        list-style-type: disc;
+        padding-left: 4rem;
+        margin-bottom: 1rem;
+    }
 `;
 CustomTab.tabsRole = 'Tab';
 CTabList.tabsRole = 'TabList';
@@ -110,7 +116,7 @@ const CTabs = ({ tabs }) => (
 
         {tabs.map(({ content }, i) => (
             <CTabPanel key={i}>
-                <ReactMarkdown source={content} />
+                <ReactMarkdown plugins={[breaks]} source={content} />
             </CTabPanel>
         ))}
     </StyledCTabs>

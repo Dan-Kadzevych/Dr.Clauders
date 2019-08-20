@@ -8,6 +8,7 @@ import { color_grey_light, color_primary } from 'styles/variables';
 
 const Name = styled.span`
     font-size: 1.4rem;
+    grid-column: 1/3;
 `;
 
 const StyledSubCategory = styled(StyledCategory)`
